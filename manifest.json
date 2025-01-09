@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "QKAI Chatbot Extension",
+  "version": "1.0",
+  "description": "Extension giúp bạn hỏi chatbot trước khi gửi câu hỏi cho Shopee.",
+  "permissions": ["activeTab"],
+  "host_permissions": ["https://shopee.vn/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.shopee.vn/*",
+        "https://*.lazada.vn/*",
+        "https://*.tiki.vn/*"
+      ],
+      "js": ["js/content.js", "js/anime.min.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["js/anime.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
